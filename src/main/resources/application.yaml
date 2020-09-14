@@ -1,0 +1,6 @@
+s3:
+  bucket:
+    name: miristudy
+  object:
+    base:
+      path: object/
