@@ -4,3 +4,13 @@ s3:
   object:
     base:
       path: object/
+
+spring:
+  datasource:
+    url: jdbc:postgresql://miristudy.c5jruzsds8gc.ap-northeast-2.rds.amazonaws.com/miristudyDB
+  jpa:
+    show-sql: true
+  session:
+    store-type: redis
+  redis:
+    host: localhost

@@ -6,6 +6,8 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import lombok.RequiredArgsConstructor;
 import me.minho.miristiudy.config.S3Config;
+import me.minho.miristiudy.domain.File;
+import me.minho.miristiudy.repository.FileRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,6 +20,7 @@ public class S3UploadService {
 
     private final AmazonS3 amazonS3;
     private final S3Config s3Config;
+    private final FileRepository fileRepository;
 
     public String upload(MultipartFile multipartFile) throws IOException {
         String uuid = UUID.randomUUID().toString();
@@ -32,7 +35,7 @@ public class S3UploadService {
                 .withCannedAcl(CannedAccessControlList.PublicRead);
 
         amazonS3.putObject(putObjectRequest);
-
+        fileRepository.save(new File(objectKey, multipartFile.getSize()));
         return amazonS3.getUrl(s3Config.getBucketName(), objectKey).toString();
     }
 
