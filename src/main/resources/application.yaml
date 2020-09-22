@@ -7,7 +7,7 @@ s3:
 
 spring:
   datasource:
-    url: jdbc:postgresql://miristudy.c5jruzsds8gc.ap-northeast-2.rds.amazonaws.com/miristudyDB
+    url: jdbc:postgresql://miristudy2.c5jruzsds8gc.ap-northeast-2.rds.amazonaws.com/miristudy_db
   jpa:
     show-sql: true
   session:
