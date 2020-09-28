@@ -7,10 +7,9 @@ s3:
 
 spring:
   datasource:
-    url: jdbc:postgresql://miristudy2.c5jruzsds8gc.ap-northeast-2.rds.amazonaws.com/miristudy_db
+    url: jdbc:postgresql://miristudy-db.cktwssh86hz5.ap-northeast-2.rds.amazonaws.com/miristudy_db
   jpa:
     show-sql: true
-  session:
-    store-type: redis
-  redis:
-    host: localhost
+
+server:
+  port: 5000
