@@ -21,5 +21,5 @@ cp -r ./beanstalk/. $WORKSPACE_DIR
 echo 'zip application archive'
 
 cd $WORKSPACE_DIR
-zip -r ../miristudy-api.zip .
+zip -r ./miristudy-api.zip .
 
